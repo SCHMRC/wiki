@@ -1,0 +1,11 @@
+<div *ngIf="payload">
+  <div class="row">
+    <div align="end">
+      <button mat-button matTooltip="update content" (click)="update()"><mat-icon>update</mat-icon></button>
+    </div>
+    <div [innerHTML]="payload | sanitizeHtml"></div>
+  </div>
+</div>
+
+
+

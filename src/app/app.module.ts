@@ -1,16 +1,36 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './material/material.module'
+import { AppRoutingModule, COMPONENTS } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { QuillModule } from 'ngx-quill'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DialogComponent } from './shared/dialog/dialog.component';
+import { SanitizeHtmlPipe } from './pipe/sanitize-html-pipe.pipe';
+
+
+
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    COMPONENTS,
+    AppComponent,
+    DialogComponent,
+    SanitizeHtmlPipe,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    MaterialModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    QuillModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

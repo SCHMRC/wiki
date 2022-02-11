@@ -1,0 +1,22 @@
+<form #form="ngForm">
+<mat-card>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="Please insert title of post" [(ngModel)]="title" name="title" required>
+  </mat-form-field>
+
+  <quill-editor [(ngModel)]="payload" [modules]="modules"  name="payload" (ngModelChange)="onChange()" ></quill-editor>
+
+</mat-card>
+<div class="row">
+  <div class="container position-relative mt-3">
+    <button class="position-absolute end-0" mat-raised-button style="margin-right: 90px;" [mat-dialog-close] >Cancel</button>
+    <button class="position-absolute end-0" mat-raised-button color="primary" style="margin-right: 10px;" (click)="onSubmit()" [disabled]="form.invalid">Done</button>
+  </div>
+
+
+
+</div>
+
+</form>

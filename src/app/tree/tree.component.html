@@ -1,0 +1,38 @@
+
+ <div mat-subheader>Note</div>
+ <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+  <mat-list >
+
+
+    <mat-list-item *ngFor="let item of data">
+      <div class="row" style="height: 100%;">
+        <div class="col-1 p-0" style="width: 24px;">
+
+            <mat-icon  style=" border-radius: 25px;" matRipple  [matRippleCentered]="true" *ngIf="session" id="close" (click)="dialogDelete(item.id)">close</mat-icon>
+
+
+        </div>
+
+        <div class="col-3 p-0 pt-3" style="width: 71px;">
+          <button mat-button color="primary" (click)="showItem(item.id)">
+            <mat-icon mat-list-icon>note</mat-icon>
+          </button>
+        </div>
+
+        <div class="col-5 p-0 pt-4" style="height: 100%;">
+          <div mat-line>{{item.title}}</div>
+          <div mat-line>{{item.created_at | date}}</div>
+
+        </div>
+
+      </div>
+
+      <mat-divider></mat-divider>
+
+    </mat-list-item>
+
+  </mat-list>
+</cdk-virtual-scroll-viewport>
+<button *ngIf="session" class="mt-2" mat-raised-button color="primary" style="width: 200px;" (click)="openDialog()" >add Note</button>
+<button *ngIf="!session" class="mt-2" mat-raised-button color="primary" style="width: 200px;" (click)="login()" >login</button>
+<button *ngIf="session" class="mt-2" mat-raised-button color="primary" style="width: 200px;" (click)="logout()" >logout</button>
