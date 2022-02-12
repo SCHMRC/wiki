@@ -1,6 +1,6 @@
 
- <div mat-subheader>Note</div>
- <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+ <div class="display-5" mat-subheader>Note</div>
+ <cdk-virtual-scroll-viewport id="box-scroll" itemSize="50" class="example-viewport" style="background-color: whitesmoke;border-radius: 15px;border: solid 1px gainsboro;">
   <mat-list >
 
 
@@ -13,8 +13,9 @@
 
         </div>
 
+
         <div class="col-3 p-0 pt-3" style="width: 71px;">
-          <button mat-button color="primary" (click)="showItem(item.id)">
+          <button mat-stroked-button color="primary" (click)="showItem(item.id)" style="height: 80%;">
             <mat-icon mat-list-icon>note</mat-icon>
           </button>
         </div>
@@ -35,4 +36,4 @@
 </cdk-virtual-scroll-viewport>
 <button *ngIf="session" class="mt-2" mat-raised-button color="primary" style="width: 200px;" (click)="openDialog()" >add Note</button>
 <button *ngIf="!session" class="mt-2" mat-raised-button color="primary" style="width: 200px;" (click)="login()" >login</button>
-<button *ngIf="session" class="mt-2" mat-raised-button color="primary" style="width: 200px;" (click)="logout()" >logout</button>
+<button *ngIf="session" class="mt-2" mat-raised-button color="warn" style="width: 200px;" (click)="logout()" >logout</button>

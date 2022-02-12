@@ -31,7 +31,7 @@ export class ItemComponent implements OnInit, AfterViewInit {
   update(){
     const dialogRef = this.dialog.open(TexteditorComponent, {
       width: '100%',
-      height: '50%',
+      height: '70%',
       data: {payload: this.util.responcePost?.getValue()},
     });
 
